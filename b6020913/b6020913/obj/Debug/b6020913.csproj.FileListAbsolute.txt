@@ -1,1 +1,9 @@
 C:\Users\0230\Desktop\Coding A2\b6020913Coding\b6020913\b6020913\bin\Debug\b6020913.exe.config
+C:\Users\0230\Desktop\Coding A2\b6020913Coding\b6020913\b6020913\bin\Debug\b6020913.exe
+C:\Users\0230\Desktop\Coding A2\b6020913Coding\b6020913\b6020913\bin\Debug\b6020913.pdb
+C:\Users\0230\Desktop\Coding A2\b6020913Coding\b6020913\b6020913\obj\Debug\b6020913.csprojResolveAssemblyReference.cache
+C:\Users\0230\Desktop\Coding A2\b6020913Coding\b6020913\b6020913\obj\Debug\b6020913.Frm_Main.resources
+C:\Users\0230\Desktop\Coding A2\b6020913Coding\b6020913\b6020913\obj\Debug\b6020913.Properties.Resources.resources
+C:\Users\0230\Desktop\Coding A2\b6020913Coding\b6020913\b6020913\obj\Debug\b6020913.csproj.GenerateResource.Cache
+C:\Users\0230\Desktop\Coding A2\b6020913Coding\b6020913\b6020913\obj\Debug\b6020913.exe
+C:\Users\0230\Desktop\Coding A2\b6020913Coding\b6020913\b6020913\obj\Debug\b6020913.pdb
