@@ -170,23 +170,12 @@
             if (this.txt_Word.Text.Length > 0)
             {
                     this.txt_Writing_Pad.AppendText(this.txt_Word.Text + " ");
-                    for (int i = 0; i == (this.txt_Word.Text.Length - 1); i++)
+                    for (int i = 0; i == (this.txt_Word.Text.Length); i++)
                     {
                         this.txt_Writing_Pad.AppendText(Convert.ToString(this.txt_Word.Text[i]));
                     }
-                    this.txt_Writing_Pad.AppendText(" ");
+                    
                     this.AddWordToWhichList();
-                    this.txt_Word.Clear();
-                    this.Str_KeyStrokes = "";
-                    this.txt_KeysPressed.Text = this.Str_KeyStrokes;
-                }
-                else
-                {
-                    for (int j = 0; j == this.Int_NumberOfCharacters; j++)
-                    {
-                        this.txt_Writing_Pad.AppendText(Convert.ToString(this.txt_Word.Text[j]));
-                    }
-                    this.txt_Writing_Pad.AppendText(" ");
                     this.txt_Word.Clear();
                     this.Str_KeyStrokes = "";
                     this.txt_KeysPressed.Text = this.Str_KeyStrokes;
