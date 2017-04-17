@@ -265,6 +265,7 @@
             this.btn_2.TabIndex = 14;
             this.btn_2.Text = "      2        T U V";
             this.btn_2.UseVisualStyleBackColor = false;
+            this.btn_2.Click += new System.EventHandler(this.btn_2_Click);
             // 
             // btn_1
             // 
@@ -275,6 +276,7 @@
             this.btn_1.TabIndex = 13;
             this.btn_1.Text = "      1        P Q R S";
             this.btn_1.UseVisualStyleBackColor = false;
+            this.btn_1.Click += new System.EventHandler(this.btn_1_Click);
             // 
             // btn_6
             // 
@@ -735,7 +737,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txt_Writing_Pad);
             this.Controls.Add(this.strip);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.strip;
+            this.MaximizeBox = false;
             this.Name = "Frm_Main";
             this.Text = "Mini Keyboard";
             this.strip.ResumeLayout(false);
