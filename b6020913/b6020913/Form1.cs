@@ -20,6 +20,7 @@
         private bool Boolean_Requires_Saving;
         private int Int_NumberOfCharacters;
         private int Int_My_List_Index;
+        private ListBox Lst_Global_Listbox = new ListBox();
         public Frm_Main()
         {
             InitializeComponent();
@@ -191,35 +192,10 @@
                     this.txt_KeysPressed.Text = this.Str_KeyStrokes;
                 }
             }
-        private void btn_1_Click(object sender, EventArgs e)
-        {
-            this.React_To_Which_Button(sender, e, this.btn_1, this.listBox_1, this.listBox_Dictionary_Key_1, 1);
-        }
+
         private bool Was_A_Different_Button_Pressed(int Button_Pressed)
         {
             return (!this.Bool_First_Visit && !this.Bool_IsButtonPresssed[Button_Pressed]);
-        }
-
-        private void Within_Timer_Tick(object sender, EventArgs e)
-        {
-            this.Within_Timer.Enabled = false;
-            this.Bool_First_Visit = true;
-            this.txt_Word.Text = this.txt_Word.Text.Remove(this.txt_Word.Text.Length - 1);
-            if (Convert.ToString(this.Lst_Global_Listbox.Items[this.Int_My_List_Index]) == "~")
-            {
-                this.txt_Word.AppendText(",");
-            }
-            else
-            {
-                this.txt_Word.AppendText(Convert.ToString(this.Lst_Global_Listbox.Items[this.Int_My_List_Index]));
-            }
-            this.txt_Word.Focus();
-            this.Int_My_List_Index = 0;
-            this.Lst_Global_Listbox.Items.Clear();
-            for (int i = 0; i <= 0x12; i++)
-            {
-                this.Bool_IsButtonPresssed[i] = false;
-            }
         }
 
         private void React_To_Which_Button(object sender, EventArgs e, Button which_button, ListBox which_listBox, ListBox which_Dictionary, int which_Button_Number)
@@ -282,6 +258,92 @@
                 this.txt_KeysPressed.Text = this.Str_KeyStrokes;
                 return;
             }
+            Label_021B:
+            this.txt_KeysPressed.Text = this.Str_KeyStrokes;
+            this.txt_KeysPressed.Text.Substring(0, 1);
+        }
+
+        private void Within_Timer_Tick(object sender, EventArgs e)
+        {
+            this.Within_Timer.Enabled = false;
+            this.Bool_First_Visit = true;
+            this.txt_Word.Text = this.txt_Word.Text.Remove(this.txt_Word.Text.Length - 1);
+            if (Convert.ToString(this.Lst_Global_Listbox.Items[this.Int_My_List_Index]) == "~")
+            {
+                this.txt_Word.AppendText(",");
+            }
+            else
+            {
+                this.txt_Word.AppendText(Convert.ToString(this.Lst_Global_Listbox.Items[this.Int_My_List_Index]));
+            }
+            this.txt_Word.Focus();
+            this.Int_My_List_Index = 0;
+            this.Lst_Global_Listbox.Items.Clear();
+            for (int i = 0; i <= 0x12; i++)
+            {
+                this.Bool_IsButtonPresssed[i] = false;
+            }
+
+        }
+        private void btn_1_Click(object sender, EventArgs e)
+        {
+            this.React_To_Which_Button(sender, e, this.btn_1, this.listBox_1, this.listBox_Dictionary_Key_1, 1);
+        }
+
+        private void btn_2_Click(object sender, EventArgs e)
+        {
+            this.React_To_Which_Button(sender, e, this.btn_2, this.listBox_2, this.listBox_Dictionary_Key_2, 2);
+        }
+
+        private void btn_3_Click(object sender, EventArgs e)
+        {
+            this.React_To_Which_Button(sender, e, this.btn_3, this.listBox_3, this.listBox_Dictionary_Key_3, 3);
+        }
+
+        private void btn_4_Click(object sender, EventArgs e)
+        {
+            this.React_To_Which_Button(sender, e, this.btn_4, this.listBox_4, this.listBox_Dictionary_Key_4, 4);
+        }
+
+        private void btn_5_Click(object sender, EventArgs e)
+        {
+            this.React_To_Which_Button(sender, e, this.btn_5, this.listBox_5, this.listBox_Dictionary_Key_5, 5);
+        }
+
+        private void btn_6_Click(object sender, EventArgs e)
+        {
+            this.React_To_Which_Button(sender, e, this.btn_6, this.listBox_6, this.listBox_Dictionary_Key_6, 6);
+        }
+
+        private void btn_7_Click(object sender, EventArgs e)
+        {
+            this.React_To_Which_Button(sender, e, this.btn_7, this.listBox_7, this.listBox_Dictionary_Key_7, 7);
+        }
+
+        private void btn_8_Click(object sender, EventArgs e)
+        {
+            this.React_To_Which_Button(sender, e, this.btn_8, this.listBox_8, this.listBox_Dictionary_Key_8, 8);
+        }
+
+        private void btn_9_Click(object sender, EventArgs e)
+        {
+            this.React_To_Which_Button(sender, e, this.btn_9, this.listBox_9, this.listBox_Dictionary_Key_9, 9);
+        }
+
+        private void btn_Punctuation_Click(object sender, EventArgs e)
+        {
+            this.React_To_Which_Button(sender, e, this.btn_Punctuation, this.listBox_Punctuation, this.listBox_Dictionary_Key_Quote, 10);
+        }
+
+        private void btn_Enter_Click(object sender, EventArgs e)
+        {
+            this.Boolean_Requires_Saving = true;
+            this.txt_Writing_Pad.AppendText(Environment.NewLine);
+        }
+
+        private void btn_Hashtag_Click(object sender, EventArgs e)
+        {
+            this.React_To_Which_Button(sender, e, this.btn_Hashtag, this.listBox_Hashtag, this.listBox_Dictionary_Key_Hash, 11);
         }
 
     }

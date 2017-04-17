@@ -254,6 +254,7 @@
             this.btn_3.TabIndex = 15;
             this.btn_3.Text = "      3        W X Y Z";
             this.btn_3.UseVisualStyleBackColor = false;
+            this.btn_3.Click += new System.EventHandler(this.btn_3_Click);
             // 
             // btn_2
             // 
@@ -693,6 +694,10 @@
             this.listBox_Dictionary_Key_7.Size = new System.Drawing.Size(68, 17);
             this.listBox_Dictionary_Key_7.TabIndex = 29;
             this.listBox_Dictionary_Key_7.Visible = false;
+            // 
+            // Within_Timer
+            // 
+            this.Within_Timer.Tick += new System.EventHandler(this.Within_Timer_Tick);
             // 
             // openFileDialog1
             // 
