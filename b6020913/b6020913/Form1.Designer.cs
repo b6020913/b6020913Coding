@@ -223,6 +223,7 @@
             this.btn_Hashtag.TabIndex = 18;
             this.btn_Hashtag.Text = "     #       0.00";
             this.btn_Hashtag.UseVisualStyleBackColor = false;
+            this.btn_Hashtag.Click += new System.EventHandler(this.btn_Hashtag_Click);
             // 
             // btn_0
             // 
@@ -244,6 +245,7 @@
             this.btn_Punctuation.TabIndex = 16;
             this.btn_Punctuation.Text = "* - _";
             this.btn_Punctuation.UseVisualStyleBackColor = false;
+            this.btn_Punctuation.Click += new System.EventHandler(this.btn_Punctuation_Click);
             // 
             // btn_3
             // 
@@ -287,6 +289,7 @@
             this.btn_6.TabIndex = 12;
             this.btn_6.Text = "      6        M N O";
             this.btn_6.UseVisualStyleBackColor = false;
+            this.btn_6.Click += new System.EventHandler(this.btn_6_Click);
             // 
             // btn_5
             // 
@@ -297,6 +300,7 @@
             this.btn_5.TabIndex = 11;
             this.btn_5.Text = "      5        J K L";
             this.btn_5.UseVisualStyleBackColor = false;
+            this.btn_5.Click += new System.EventHandler(this.btn_5_Click);
             // 
             // btn_4
             // 
@@ -307,6 +311,7 @@
             this.btn_4.TabIndex = 10;
             this.btn_4.Text = "      4        G H I";
             this.btn_4.UseVisualStyleBackColor = false;
+            this.btn_4.Click += new System.EventHandler(this.btn_4_Click);
             // 
             // btn_9
             // 
@@ -317,6 +322,7 @@
             this.btn_9.TabIndex = 9;
             this.btn_9.Text = "      9        D E F";
             this.btn_9.UseVisualStyleBackColor = false;
+            this.btn_9.Click += new System.EventHandler(this.btn_9_Click);
             // 
             // btn_8
             // 
@@ -327,6 +333,7 @@
             this.btn_8.TabIndex = 8;
             this.btn_8.Text = "      8        A B C";
             this.btn_8.UseVisualStyleBackColor = false;
+            this.btn_8.Click += new System.EventHandler(this.btn_8_Click);
             // 
             // btn_7
             // 
@@ -337,6 +344,7 @@
             this.btn_7.TabIndex = 7;
             this.btn_7.Text = "      7         .  ,  \"";
             this.btn_7.UseVisualStyleBackColor = false;
+            this.btn_7.Click += new System.EventHandler(this.btn_7_Click);
             // 
             // btn_Enter
             // 

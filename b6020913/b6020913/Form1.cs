@@ -275,6 +275,21 @@
 
         }
 
+        private void btn_Enter_Click(object sender, EventArgs e)
+        {
+            this.Boolean_Requires_Saving = true;
+            this.txt_Writing_Pad.AppendText(Environment.NewLine);
+        }
+
+        private void btn_2_Click(object sender, EventArgs e)
+        {
+            this.React_To_Which_Button(sender, e, this.btn_2, this.listBox_2, this.listBox_Dictionary_Key_2, 2);
+        }
+
+        private void btn_1_Click(object sender, EventArgs e)
+        {
+            this.React_To_Which_Button(sender, e, this.btn_1, this.listBox_1, this.listBox_Dictionary_Key_1, 1);
+        }
         private void btn_3_Click(object sender, EventArgs e)
         {
             this.React_To_Which_Button(sender, e, this.btn_3, this.listBox_3, this.listBox_Dictionary_Key_3, 3);
@@ -310,30 +325,14 @@
             this.React_To_Which_Button(sender, e, this.btn_9, this.listBox_9, this.listBox_Dictionary_Key_9, 9);
         }
 
-        private void btn_Punctuation_Click(object sender, EventArgs e)
-        {
-            this.React_To_Which_Button(sender, e, this.btn_Punctuation, this.listBox_Punctuation, this.listBox_Dictionary_Key_Quote, 10);
-        }
-
-        private void btn_Enter_Click(object sender, EventArgs e)
-        {
-            this.Boolean_Requires_Saving = true;
-            this.txt_Writing_Pad.AppendText(Environment.NewLine);
-        }
-
         private void btn_Hashtag_Click(object sender, EventArgs e)
         {
             this.React_To_Which_Button(sender, e, this.btn_Hashtag, this.listBox_Hashtag, this.listBox_Dictionary_Key_Hash, 11);
         }
 
-        private void btn_2_Click(object sender, EventArgs e)
+        private void btn_Punctuation_Click(object sender, EventArgs e)
         {
-            this.React_To_Which_Button(sender, e, this.btn_2, this.listBox_2, this.listBox_Dictionary_Key_2, 2);
-        }
-
-        private void btn_1_Click(object sender, EventArgs e)
-        {
-            this.React_To_Which_Button(sender, e, this.btn_1, this.listBox_1, this.listBox_Dictionary_Key_1, 1);
+            this.React_To_Which_Button(sender, e, this.btn_Punctuation, this.listBox_Punctuation, this.listBox_Dictionary_Key_Quote, 10);
         }
 
     }
