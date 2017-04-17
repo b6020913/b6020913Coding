@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.strip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.strip_New = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,6 +62,31 @@
             this.btn_Next = new System.Windows.Forms.Button();
             this.btn_Mode = new System.Windows.Forms.Button();
             this.txt_KeysPressed = new System.Windows.Forms.TextBox();
+            this.listBox_7 = new System.Windows.Forms.ListBox();
+            this.listBox_8 = new System.Windows.Forms.ListBox();
+            this.listBox_9 = new System.Windows.Forms.ListBox();
+            this.listBox_4 = new System.Windows.Forms.ListBox();
+            this.listBox_5 = new System.Windows.Forms.ListBox();
+            this.listBox_6 = new System.Windows.Forms.ListBox();
+            this.listBox_1 = new System.Windows.Forms.ListBox();
+            this.listBox_2 = new System.Windows.Forms.ListBox();
+            this.listBox_3 = new System.Windows.Forms.ListBox();
+            this.listBox_Punctuation = new System.Windows.Forms.ListBox();
+            this.listBox_Hashtag = new System.Windows.Forms.ListBox();
+            this.listBox_Dictionary_Key_Hash = new System.Windows.Forms.ListBox();
+            this.listBox_Dictionary_Key_Quote = new System.Windows.Forms.ListBox();
+            this.listBox_Dictionary_Key_3 = new System.Windows.Forms.ListBox();
+            this.listBox_Dictionary_Key_2 = new System.Windows.Forms.ListBox();
+            this.listBox_Dictionary_Key_1 = new System.Windows.Forms.ListBox();
+            this.listBox_Dictionary_Key_6 = new System.Windows.Forms.ListBox();
+            this.listBox_Dictionary_Key_5 = new System.Windows.Forms.ListBox();
+            this.listBox_Dictionary_Key_4 = new System.Windows.Forms.ListBox();
+            this.listBox_Dictionary_Key_9 = new System.Windows.Forms.ListBox();
+            this.listBox_Dictionary_Key_8 = new System.Windows.Forms.ListBox();
+            this.listBox_Dictionary_Key_7 = new System.Windows.Forms.ListBox();
+            this.Within_Timer = new System.Windows.Forms.Timer(this.components);
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFile = new System.Windows.Forms.SaveFileDialog();
             this.strip.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -207,6 +233,7 @@
             this.btn_0.TabIndex = 17;
             this.btn_0.Text = "     000       [ _ }";
             this.btn_0.UseVisualStyleBackColor = false;
+            this.btn_0.Click += new System.EventHandler(this.btn_0_Click);
             // 
             // btn_Punctuation
             // 
@@ -385,11 +412,319 @@
             this.txt_KeysPressed.TabIndex = 4;
             this.txt_KeysPressed.Visible = false;
             // 
+            // listBox_7
+            // 
+            this.listBox_7.FormattingEnabled = true;
+            this.listBox_7.Items.AddRange(new object[] {
+            ".",
+            ",",
+            "\"",
+            "7",
+            "\'",
+            ":",
+            "; "});
+            this.listBox_7.Location = new System.Drawing.Point(656, 407);
+            this.listBox_7.Name = "listBox_7";
+            this.listBox_7.Size = new System.Drawing.Size(35, 56);
+            this.listBox_7.TabIndex = 5;
+            this.listBox_7.Visible = false;
+            // 
+            // listBox_8
+            // 
+            this.listBox_8.FormattingEnabled = true;
+            this.listBox_8.Items.AddRange(new object[] {
+            "a",
+            "b",
+            "c",
+            "8",
+            "A",
+            "B",
+            "C"});
+            this.listBox_8.Location = new System.Drawing.Point(697, 407);
+            this.listBox_8.Name = "listBox_8";
+            this.listBox_8.Size = new System.Drawing.Size(33, 56);
+            this.listBox_8.TabIndex = 6;
+            this.listBox_8.Visible = false;
+            // 
+            // listBox_9
+            // 
+            this.listBox_9.FormattingEnabled = true;
+            this.listBox_9.Items.AddRange(new object[] {
+            "d",
+            "e",
+            "f",
+            "9",
+            "D",
+            "E",
+            "F"});
+            this.listBox_9.Location = new System.Drawing.Point(736, 407);
+            this.listBox_9.Name = "listBox_9";
+            this.listBox_9.Size = new System.Drawing.Size(37, 56);
+            this.listBox_9.TabIndex = 7;
+            this.listBox_9.Visible = false;
+            // 
+            // listBox_4
+            // 
+            this.listBox_4.FormattingEnabled = true;
+            this.listBox_4.Items.AddRange(new object[] {
+            "g",
+            "h",
+            "i",
+            "4",
+            "G",
+            "H",
+            "I"});
+            this.listBox_4.Location = new System.Drawing.Point(653, 469);
+            this.listBox_4.Name = "listBox_4";
+            this.listBox_4.Size = new System.Drawing.Size(38, 69);
+            this.listBox_4.TabIndex = 8;
+            this.listBox_4.Visible = false;
+            // 
+            // listBox_5
+            // 
+            this.listBox_5.FormattingEnabled = true;
+            this.listBox_5.Items.AddRange(new object[] {
+            "j",
+            "k",
+            "l",
+            "5",
+            "J",
+            "K",
+            "L"});
+            this.listBox_5.Location = new System.Drawing.Point(695, 469);
+            this.listBox_5.Name = "listBox_5";
+            this.listBox_5.Size = new System.Drawing.Size(35, 69);
+            this.listBox_5.TabIndex = 9;
+            this.listBox_5.Visible = false;
+            // 
+            // listBox_6
+            // 
+            this.listBox_6.FormattingEnabled = true;
+            this.listBox_6.Items.AddRange(new object[] {
+            "m",
+            "n",
+            "o",
+            "6",
+            "M",
+            "N",
+            "O"});
+            this.listBox_6.Location = new System.Drawing.Point(736, 469);
+            this.listBox_6.Name = "listBox_6";
+            this.listBox_6.Size = new System.Drawing.Size(37, 69);
+            this.listBox_6.TabIndex = 10;
+            this.listBox_6.Visible = false;
+            // 
+            // listBox_1
+            // 
+            this.listBox_1.FormattingEnabled = true;
+            this.listBox_1.Items.AddRange(new object[] {
+            "p",
+            "q",
+            "r",
+            "s",
+            "1",
+            "P",
+            "Q",
+            "R",
+            "S"});
+            this.listBox_1.Location = new System.Drawing.Point(653, 544);
+            this.listBox_1.Name = "listBox_1";
+            this.listBox_1.Size = new System.Drawing.Size(38, 69);
+            this.listBox_1.TabIndex = 11;
+            this.listBox_1.Visible = false;
+            // 
+            // listBox_2
+            // 
+            this.listBox_2.FormattingEnabled = true;
+            this.listBox_2.Items.AddRange(new object[] {
+            "t",
+            "u",
+            "v",
+            "2",
+            "T",
+            "U",
+            "V"});
+            this.listBox_2.Location = new System.Drawing.Point(697, 544);
+            this.listBox_2.Name = "listBox_2";
+            this.listBox_2.Size = new System.Drawing.Size(33, 69);
+            this.listBox_2.TabIndex = 12;
+            this.listBox_2.Visible = false;
+            // 
+            // listBox_3
+            // 
+            this.listBox_3.FormattingEnabled = true;
+            this.listBox_3.Items.AddRange(new object[] {
+            "w",
+            "x",
+            "y",
+            "z",
+            "3",
+            "W",
+            "X",
+            "Y",
+            "Z"});
+            this.listBox_3.Location = new System.Drawing.Point(736, 544);
+            this.listBox_3.Name = "listBox_3";
+            this.listBox_3.Size = new System.Drawing.Size(37, 69);
+            this.listBox_3.TabIndex = 13;
+            this.listBox_3.Visible = false;
+            // 
+            // listBox_Punctuation
+            // 
+            this.listBox_Punctuation.FormattingEnabled = true;
+            this.listBox_Punctuation.Items.AddRange(new object[] {
+            "*",
+            "‐",
+            "_"});
+            this.listBox_Punctuation.Location = new System.Drawing.Point(653, 618);
+            this.listBox_Punctuation.Name = "listBox_Punctuation";
+            this.listBox_Punctuation.Size = new System.Drawing.Size(38, 56);
+            this.listBox_Punctuation.TabIndex = 14;
+            this.listBox_Punctuation.Visible = false;
+            // 
+            // listBox_Hashtag
+            // 
+            this.listBox_Hashtag.FormattingEnabled = true;
+            this.listBox_Hashtag.Items.AddRange(new object[] {
+            "#",
+            "‐",
+            "_"});
+            this.listBox_Hashtag.Location = new System.Drawing.Point(735, 619);
+            this.listBox_Hashtag.Name = "listBox_Hashtag";
+            this.listBox_Hashtag.Size = new System.Drawing.Size(38, 56);
+            this.listBox_Hashtag.TabIndex = 15;
+            this.listBox_Hashtag.Visible = false;
+            // 
+            // listBox_Dictionary_Key_Hash
+            // 
+            this.listBox_Dictionary_Key_Hash.FormattingEnabled = true;
+            this.listBox_Dictionary_Key_Hash.Location = new System.Drawing.Point(183, 567);
+            this.listBox_Dictionary_Key_Hash.Name = "listBox_Dictionary_Key_Hash";
+            this.listBox_Dictionary_Key_Hash.Size = new System.Drawing.Size(67, 17);
+            this.listBox_Dictionary_Key_Hash.TabIndex = 39;
+            this.listBox_Dictionary_Key_Hash.Visible = false;
+            // 
+            // listBox_Dictionary_Key_Quote
+            // 
+            this.listBox_Dictionary_Key_Quote.FormattingEnabled = true;
+            this.listBox_Dictionary_Key_Quote.Location = new System.Drawing.Point(22, 570);
+            this.listBox_Dictionary_Key_Quote.Name = "listBox_Dictionary_Key_Quote";
+            this.listBox_Dictionary_Key_Quote.Size = new System.Drawing.Size(65, 17);
+            this.listBox_Dictionary_Key_Quote.TabIndex = 38;
+            this.listBox_Dictionary_Key_Quote.Visible = false;
+            // 
+            // listBox_Dictionary_Key_3
+            // 
+            this.listBox_Dictionary_Key_3.FormattingEnabled = true;
+            this.listBox_Dictionary_Key_3.Location = new System.Drawing.Point(182, 533);
+            this.listBox_Dictionary_Key_3.Name = "listBox_Dictionary_Key_3";
+            this.listBox_Dictionary_Key_3.Size = new System.Drawing.Size(69, 17);
+            this.listBox_Dictionary_Key_3.TabIndex = 37;
+            this.listBox_Dictionary_Key_3.Visible = false;
+            // 
+            // listBox_Dictionary_Key_2
+            // 
+            this.listBox_Dictionary_Key_2.FormattingEnabled = true;
+            this.listBox_Dictionary_Key_2.Location = new System.Drawing.Point(100, 534);
+            this.listBox_Dictionary_Key_2.Name = "listBox_Dictionary_Key_2";
+            this.listBox_Dictionary_Key_2.Size = new System.Drawing.Size(66, 17);
+            this.listBox_Dictionary_Key_2.TabIndex = 36;
+            this.listBox_Dictionary_Key_2.Visible = false;
+            // 
+            // listBox_Dictionary_Key_1
+            // 
+            this.listBox_Dictionary_Key_1.FormattingEnabled = true;
+            this.listBox_Dictionary_Key_1.Location = new System.Drawing.Point(24, 533);
+            this.listBox_Dictionary_Key_1.Name = "listBox_Dictionary_Key_1";
+            this.listBox_Dictionary_Key_1.Size = new System.Drawing.Size(63, 17);
+            this.listBox_Dictionary_Key_1.TabIndex = 35;
+            this.listBox_Dictionary_Key_1.Visible = false;
+            // 
+            // listBox_Dictionary_Key_6
+            // 
+            this.listBox_Dictionary_Key_6.FormattingEnabled = true;
+            this.listBox_Dictionary_Key_6.Location = new System.Drawing.Point(180, 496);
+            this.listBox_Dictionary_Key_6.Name = "listBox_Dictionary_Key_6";
+            this.listBox_Dictionary_Key_6.Size = new System.Drawing.Size(72, 17);
+            this.listBox_Dictionary_Key_6.TabIndex = 34;
+            this.listBox_Dictionary_Key_6.Visible = false;
+            // 
+            // listBox_Dictionary_Key_5
+            // 
+            this.listBox_Dictionary_Key_5.FormattingEnabled = true;
+            this.listBox_Dictionary_Key_5.Location = new System.Drawing.Point(101, 499);
+            this.listBox_Dictionary_Key_5.Name = "listBox_Dictionary_Key_5";
+            this.listBox_Dictionary_Key_5.Size = new System.Drawing.Size(66, 17);
+            this.listBox_Dictionary_Key_5.TabIndex = 33;
+            this.listBox_Dictionary_Key_5.Visible = false;
+            // 
+            // listBox_Dictionary_Key_4
+            // 
+            this.listBox_Dictionary_Key_4.FormattingEnabled = true;
+            this.listBox_Dictionary_Key_4.Location = new System.Drawing.Point(22, 501);
+            this.listBox_Dictionary_Key_4.Name = "listBox_Dictionary_Key_4";
+            this.listBox_Dictionary_Key_4.Size = new System.Drawing.Size(65, 17);
+            this.listBox_Dictionary_Key_4.TabIndex = 32;
+            this.listBox_Dictionary_Key_4.Visible = false;
+            // 
+            // listBox_Dictionary_Key_9
+            // 
+            this.listBox_Dictionary_Key_9.FormattingEnabled = true;
+            this.listBox_Dictionary_Key_9.Location = new System.Drawing.Point(177, 469);
+            this.listBox_Dictionary_Key_9.Name = "listBox_Dictionary_Key_9";
+            this.listBox_Dictionary_Key_9.Size = new System.Drawing.Size(76, 17);
+            this.listBox_Dictionary_Key_9.TabIndex = 31;
+            this.listBox_Dictionary_Key_9.Visible = false;
+            // 
+            // listBox_Dictionary_Key_8
+            // 
+            this.listBox_Dictionary_Key_8.FormattingEnabled = true;
+            this.listBox_Dictionary_Key_8.Location = new System.Drawing.Point(100, 469);
+            this.listBox_Dictionary_Key_8.Name = "listBox_Dictionary_Key_8";
+            this.listBox_Dictionary_Key_8.Size = new System.Drawing.Size(68, 17);
+            this.listBox_Dictionary_Key_8.TabIndex = 30;
+            this.listBox_Dictionary_Key_8.Visible = false;
+            // 
+            // listBox_Dictionary_Key_7
+            // 
+            this.listBox_Dictionary_Key_7.FormattingEnabled = true;
+            this.listBox_Dictionary_Key_7.Location = new System.Drawing.Point(20, 471);
+            this.listBox_Dictionary_Key_7.Name = "listBox_Dictionary_Key_7";
+            this.listBox_Dictionary_Key_7.Size = new System.Drawing.Size(68, 17);
+            this.listBox_Dictionary_Key_7.TabIndex = 29;
+            this.listBox_Dictionary_Key_7.Visible = false;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 717);
+            this.Controls.Add(this.listBox_Dictionary_Key_Hash);
+            this.Controls.Add(this.listBox_Dictionary_Key_Quote);
+            this.Controls.Add(this.listBox_Dictionary_Key_3);
+            this.Controls.Add(this.listBox_Dictionary_Key_2);
+            this.Controls.Add(this.listBox_Dictionary_Key_1);
+            this.Controls.Add(this.listBox_Dictionary_Key_6);
+            this.Controls.Add(this.listBox_Dictionary_Key_5);
+            this.Controls.Add(this.listBox_Dictionary_Key_4);
+            this.Controls.Add(this.listBox_Dictionary_Key_9);
+            this.Controls.Add(this.listBox_Dictionary_Key_8);
+            this.Controls.Add(this.listBox_Dictionary_Key_7);
+            this.Controls.Add(this.listBox_Hashtag);
+            this.Controls.Add(this.listBox_Punctuation);
+            this.Controls.Add(this.listBox_3);
+            this.Controls.Add(this.listBox_2);
+            this.Controls.Add(this.listBox_1);
+            this.Controls.Add(this.listBox_6);
+            this.Controls.Add(this.listBox_5);
+            this.Controls.Add(this.listBox_4);
+            this.Controls.Add(this.listBox_9);
+            this.Controls.Add(this.listBox_8);
+            this.Controls.Add(this.listBox_7);
             this.Controls.Add(this.txt_KeysPressed);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -443,6 +778,31 @@
         private System.Windows.Forms.Button btn_8;
         private System.Windows.Forms.Button btn_7;
         private System.Windows.Forms.TextBox txt_KeysPressed;
+        private System.Windows.Forms.ListBox listBox_7;
+        private System.Windows.Forms.ListBox listBox_8;
+        private System.Windows.Forms.ListBox listBox_9;
+        private System.Windows.Forms.ListBox listBox_4;
+        private System.Windows.Forms.ListBox listBox_5;
+        private System.Windows.Forms.ListBox listBox_6;
+        private System.Windows.Forms.ListBox listBox_1;
+        private System.Windows.Forms.ListBox listBox_2;
+        private System.Windows.Forms.ListBox listBox_3;
+        private System.Windows.Forms.ListBox listBox_Punctuation;
+        private System.Windows.Forms.ListBox listBox_Hashtag;
+        private System.Windows.Forms.ListBox listBox_Dictionary_Key_Hash;
+        private System.Windows.Forms.ListBox listBox_Dictionary_Key_Quote;
+        private System.Windows.Forms.ListBox listBox_Dictionary_Key_3;
+        private System.Windows.Forms.ListBox listBox_Dictionary_Key_2;
+        private System.Windows.Forms.ListBox listBox_Dictionary_Key_1;
+        private System.Windows.Forms.ListBox listBox_Dictionary_Key_6;
+        private System.Windows.Forms.ListBox listBox_Dictionary_Key_5;
+        private System.Windows.Forms.ListBox listBox_Dictionary_Key_4;
+        private System.Windows.Forms.ListBox listBox_Dictionary_Key_9;
+        private System.Windows.Forms.ListBox listBox_Dictionary_Key_8;
+        private System.Windows.Forms.ListBox listBox_Dictionary_Key_7;
+        private System.Windows.Forms.Timer Within_Timer;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFile;
     }
 }
 
