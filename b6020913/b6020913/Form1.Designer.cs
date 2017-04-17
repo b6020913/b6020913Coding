@@ -599,7 +599,7 @@
             // listBox_Dictionary_Key_Hash
             // 
             this.listBox_Dictionary_Key_Hash.FormattingEnabled = true;
-            this.listBox_Dictionary_Key_Hash.Location = new System.Drawing.Point(183, 567);
+            this.listBox_Dictionary_Key_Hash.Location = new System.Drawing.Point(182, 534);
             this.listBox_Dictionary_Key_Hash.Name = "listBox_Dictionary_Key_Hash";
             this.listBox_Dictionary_Key_Hash.Size = new System.Drawing.Size(67, 17);
             this.listBox_Dictionary_Key_Hash.TabIndex = 39;
@@ -608,7 +608,7 @@
             // listBox_Dictionary_Key_Quote
             // 
             this.listBox_Dictionary_Key_Quote.FormattingEnabled = true;
-            this.listBox_Dictionary_Key_Quote.Location = new System.Drawing.Point(22, 570);
+            this.listBox_Dictionary_Key_Quote.Location = new System.Drawing.Point(12, 533);
             this.listBox_Dictionary_Key_Quote.Name = "listBox_Dictionary_Key_Quote";
             this.listBox_Dictionary_Key_Quote.Size = new System.Drawing.Size(65, 17);
             this.listBox_Dictionary_Key_Quote.TabIndex = 38;
@@ -617,7 +617,7 @@
             // listBox_Dictionary_Key_3
             // 
             this.listBox_Dictionary_Key_3.FormattingEnabled = true;
-            this.listBox_Dictionary_Key_3.Location = new System.Drawing.Point(182, 533);
+            this.listBox_Dictionary_Key_3.Location = new System.Drawing.Point(181, 500);
             this.listBox_Dictionary_Key_3.Name = "listBox_Dictionary_Key_3";
             this.listBox_Dictionary_Key_3.Size = new System.Drawing.Size(69, 17);
             this.listBox_Dictionary_Key_3.TabIndex = 37;
@@ -635,7 +635,7 @@
             // listBox_Dictionary_Key_1
             // 
             this.listBox_Dictionary_Key_1.FormattingEnabled = true;
-            this.listBox_Dictionary_Key_1.Location = new System.Drawing.Point(24, 533);
+            this.listBox_Dictionary_Key_1.Location = new System.Drawing.Point(14, 496);
             this.listBox_Dictionary_Key_1.Name = "listBox_Dictionary_Key_1";
             this.listBox_Dictionary_Key_1.Size = new System.Drawing.Size(63, 17);
             this.listBox_Dictionary_Key_1.TabIndex = 35;
@@ -644,7 +644,7 @@
             // listBox_Dictionary_Key_6
             // 
             this.listBox_Dictionary_Key_6.FormattingEnabled = true;
-            this.listBox_Dictionary_Key_6.Location = new System.Drawing.Point(180, 496);
+            this.listBox_Dictionary_Key_6.Location = new System.Drawing.Point(179, 463);
             this.listBox_Dictionary_Key_6.Name = "listBox_Dictionary_Key_6";
             this.listBox_Dictionary_Key_6.Size = new System.Drawing.Size(72, 17);
             this.listBox_Dictionary_Key_6.TabIndex = 34;
@@ -662,7 +662,7 @@
             // listBox_Dictionary_Key_4
             // 
             this.listBox_Dictionary_Key_4.FormattingEnabled = true;
-            this.listBox_Dictionary_Key_4.Location = new System.Drawing.Point(22, 501);
+            this.listBox_Dictionary_Key_4.Location = new System.Drawing.Point(12, 464);
             this.listBox_Dictionary_Key_4.Name = "listBox_Dictionary_Key_4";
             this.listBox_Dictionary_Key_4.Size = new System.Drawing.Size(65, 17);
             this.listBox_Dictionary_Key_4.TabIndex = 32;
@@ -671,7 +671,7 @@
             // listBox_Dictionary_Key_9
             // 
             this.listBox_Dictionary_Key_9.FormattingEnabled = true;
-            this.listBox_Dictionary_Key_9.Location = new System.Drawing.Point(177, 469);
+            this.listBox_Dictionary_Key_9.Location = new System.Drawing.Point(176, 436);
             this.listBox_Dictionary_Key_9.Name = "listBox_Dictionary_Key_9";
             this.listBox_Dictionary_Key_9.Size = new System.Drawing.Size(76, 17);
             this.listBox_Dictionary_Key_9.TabIndex = 31;
@@ -689,7 +689,7 @@
             // listBox_Dictionary_Key_7
             // 
             this.listBox_Dictionary_Key_7.FormattingEnabled = true;
-            this.listBox_Dictionary_Key_7.Location = new System.Drawing.Point(20, 471);
+            this.listBox_Dictionary_Key_7.Location = new System.Drawing.Point(10, 434);
             this.listBox_Dictionary_Key_7.Name = "listBox_Dictionary_Key_7";
             this.listBox_Dictionary_Key_7.Size = new System.Drawing.Size(68, 17);
             this.listBox_Dictionary_Key_7.TabIndex = 29;
