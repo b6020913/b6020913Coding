@@ -335,6 +335,18 @@
             this.React_To_Which_Button(sender, e, this.btn_Punctuation, this.listBox_Punctuation, this.listBox_Dictionary_Key_Quote, 10);
         }
 
+        private void btn_Mode_Click(object sender, EventArgs e)
+        {
+            if (this.txt_Mode.Text == "Multi-Press")
+            {
+                this.txt_Mode.Text = "Prediction";
+            }
+            else
+            {
+                this.txt_Mode.Text = "Multi-Press";
+            }
+        }
+
     }
 }
 

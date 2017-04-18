@@ -414,6 +414,7 @@
             this.btn_Mode.TabIndex = 0;
             this.btn_Mode.Text = "Mode";
             this.btn_Mode.UseVisualStyleBackColor = false;
+            this.btn_Mode.Click += new System.EventHandler(this.btn_Mode_Click);
             // 
             // txt_KeysPressed
             // 
