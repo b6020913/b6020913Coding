@@ -751,6 +751,7 @@
             this.MaximizeBox = false;
             this.Name = "Frm_Main";
             this.Text = "Mini Keyboard";
+            this.Load += new System.EventHandler(this.Frm_Main_Load);
             this.strip.ResumeLayout(false);
             this.strip.PerformLayout();
             this.panel1.ResumeLayout(false);

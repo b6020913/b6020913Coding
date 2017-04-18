@@ -14,13 +14,18 @@
 
     public partial class Frm_Main : Form
     {
-        private string Str_KeyStrokes;
-        private bool Bool_First_Visit = true;
-        private bool[] Bool_IsButtonPresssed = new bool[0x13];
-        private bool Boolean_Requires_Saving;
-        private int Int_NumberOfCharacters;
-        private int Int_My_List_Index;
-        private ListBox Lst_Global_Listbox = new ListBox();
+        string Str_KeyStrokes;
+        bool Bool_First_Visit = true;
+        bool[] Bool_IsButtonPresssed = new bool[0x13];
+        bool Boolean_Requires_Saving;
+        int Int_NumberOfCharacters;
+        int Int_My_List_Index;
+        ListBox Lst_Global_Listbox = new ListBox();
+        int intIntervalRequired = 500;
+        int inMyListIndex = 0;
+        bool[] boolsButtonPressed = new bool[19];
+        int intPredictedIndex;
+        int intNumberOfCharacters;
         public Frm_Main()
         {
             InitializeComponent();
@@ -89,66 +94,7 @@
                 which_Dictionary_ListBox.Items.Add(this.Str_KeyStrokes + "," + this.txt_Word.Text + ",0");
             }
         }
-        private void AddWordToWhichList()
-        {
-            switch (this.txt_KeysPressed.Text[0])
-            {
-                case '*':
-                    this.AddToList(this.listBox_Dictionary_Key_Quote);
-                    return;
 
-                case '+':
-                case ',':
-                case '-':
-                case '.':
-                case '/':
-                case '0':
-                    break;
-
-                case '1':
-                    this.AddToList(this.listBox_Dictionary_Key_1);
-                    return;
-
-                case '2':
-                    this.AddToList(this.listBox_Dictionary_Key_2);
-                    return;
-
-                case '3':
-                    this.AddToList(this.listBox_Dictionary_Key_3);
-                    return;
-
-                case '4':
-                    this.AddToList(this.listBox_Dictionary_Key_4);
-                    return;
-
-                case '5':
-                    this.AddToList(this.listBox_Dictionary_Key_5);
-                    return;
-
-                case '6':
-                    this.AddToList(this.listBox_Dictionary_Key_6);
-                    return;
-
-                case '7':
-                    this.AddToList(this.listBox_Dictionary_Key_7);
-                    return;
-
-                case '8':
-                    this.AddToList(this.listBox_Dictionary_Key_8);
-                    return;
-
-                case '9':
-                    this.AddToList(this.listBox_Dictionary_Key_9);
-                    return;
-
-                case '#':
-                    this.AddToList(this.listBox_Dictionary_Key_Hash);
-                    break;
-
-                default:
-                    return;
-            }
-        }
         private void btn_Previous_Click(object sender, EventArgs e)
         {
             if (this.txt_Mode.Text == "Multi-Press")
@@ -175,7 +121,7 @@
                         this.txt_Writing_Pad.AppendText(Convert.ToString(this.txt_Word.Text[i]));
                     }
                     
-                    this.AddWordToWhichList();
+                    this.loadDictionary();
                     this.txt_Word.Clear();
                     this.Str_KeyStrokes = "";
                     this.txt_KeysPressed.Text = this.Str_KeyStrokes;
@@ -344,6 +290,75 @@
             else
             {
                 this.txt_Mode.Text = "Multi-Press";
+            }
+        }
+
+        private void Frm_Main_Load(object sender, EventArgs e)
+        {
+            Within_Timer.Interval = intIntervalRequired;
+            for (int intWhichButton = 0; intWhichButton <= 18; intWhichButton++)
+                boolsButtonPressed[intWhichButton] = false;
+            loadDictionary();
+            
+        }
+        private void loadDictionary()
+        {
+            switch (this.txt_KeysPressed.Text[0])
+            {
+                case '*':
+                    this.AddToList(this.listBox_Dictionary_Key_Quote);
+                    return;
+
+                case '+':
+                case ',':
+                case '-':
+                case '.':
+                case '/':
+                case '0':
+                    break;
+
+                case '1':
+                    this.AddToList(this.listBox_Dictionary_Key_1);
+                    return;
+
+                case '2':
+                    this.AddToList(this.listBox_Dictionary_Key_2);
+                    return;
+
+                case '3':
+                    this.AddToList(this.listBox_Dictionary_Key_3);
+                    return;
+
+                case '4':
+                    this.AddToList(this.listBox_Dictionary_Key_4);
+                    return;
+
+                case '5':
+                    this.AddToList(this.listBox_Dictionary_Key_5);
+                    return;
+
+                case '6':
+                    this.AddToList(this.listBox_Dictionary_Key_6);
+                    return;
+
+                case '7':
+                    this.AddToList(this.listBox_Dictionary_Key_7);
+                    return;
+
+                case '8':
+                    this.AddToList(this.listBox_Dictionary_Key_8);
+                    return;
+
+                case '9':
+                    this.AddToList(this.listBox_Dictionary_Key_9);
+                    return;
+
+                case '#':
+                    this.AddToList(this.listBox_Dictionary_Key_Hash);
+                    break;
+
+                default:
+                    return;
             }
         }
 
