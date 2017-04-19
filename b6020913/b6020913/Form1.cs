@@ -377,6 +377,21 @@
                 txt_Writing_Pad.Text = File.ReadAllText(openFileDialog.FileName);
             }
         }
+
+        private void strip_Configure_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int delay = Convert.ToInt16(My_Dialogs.InputBox("Enter a delay value you require, 1000 is equal to 1 second meaning 5000 is 5 seconds. The current delay value is " + this.intIntervalRequired + "."));
+            if (delay < 500)
+            {
+                delay = 500;
+            }
+            this.Within_Timer.Interval = delay;
+            this.intIntervalRequired = delay;
+            }
+            catch { }
+        }
     }
 }
 

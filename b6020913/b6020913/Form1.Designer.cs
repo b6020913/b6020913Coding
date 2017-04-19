@@ -154,6 +154,7 @@
             this.strip_Configure.Name = "strip_Configure";
             this.strip_Configure.Size = new System.Drawing.Size(72, 20);
             this.strip_Configure.Text = "Configure";
+            this.strip_Configure.Click += new System.EventHandler(this.strip_Configure_Click);
             // 
             // txt_Writing_Pad
             // 
