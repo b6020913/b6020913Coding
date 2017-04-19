@@ -94,7 +94,6 @@
                 which_Dictionary_ListBox.Items.Add(this.Str_KeyStrokes + "," + this.txt_Word.Text + ",0");
             }
         }
-
         private void btn_Previous_Click(object sender, EventArgs e)
         {
             if (this.txt_Mode.Text == "Multi-Press")
@@ -121,7 +120,6 @@
                         this.txt_Writing_Pad.AppendText(Convert.ToString(this.txt_Word.Text[i]));
                     }
                     
-                    this.loadDictionary();
                     this.txt_Word.Clear();
                     this.Str_KeyStrokes = "";
                     this.txt_KeysPressed.Text = this.Str_KeyStrokes;
@@ -145,11 +143,11 @@
                 {
                     case 10:
                         this.Str_KeyStrokes = this.Str_KeyStrokes + "*";
-                        goto Label_021B;
+                        goto Label_Test;
 
                     case 11:
                         this.Str_KeyStrokes = this.Str_KeyStrokes + "#";
-                        goto Label_021B;
+                        goto Label_Test;
                 }
                 this.Str_KeyStrokes = this.Str_KeyStrokes + Convert.ToString(which_Button_Number);
             }
@@ -163,14 +161,19 @@
                     {
                         this.Int_My_List_Index = 0;
                     }
-                    this.txt_Word.Text = this.txt_Word.Text.Remove(this.txt_Word.Text.Length - 1);
-                    this.txt_Word.AppendText(Convert.ToString(which_listBox.Items[this.Int_My_List_Index]));
-                    this.Within_Timer.Enabled = true;
-                    return;
+                    try
+                    {
+                        this.txt_Word.Text = this.txt_Word.Text.Remove(this.txt_Word.Text.Length - 1);
+                        this.txt_Word.AppendText(Convert.ToString(which_listBox.Items[this.Int_My_List_Index]));
+                        this.Within_Timer.Enabled = true;
+                        return;
+                    }
+                    catch { }
                 }
-                this.Bool_First_Visit = false;
-                this.Within_Timer.Enabled = true;
-                this.txt_Word.AppendText(Convert.ToString(which_listBox.Items[this.Int_My_List_Index]));
+                    this.Bool_First_Visit = false;
+                    this.Within_Timer.Enabled = true;
+                    this.txt_Word.AppendText(Convert.ToString(which_listBox.Items[this.Int_My_List_Index]));
+
                 for (int i = 0; i <= (which_listBox.Items.Count - 1); i++)
                 {
                     this.Lst_Global_Listbox.Items.Add(Convert.ToString(which_listBox.Items[i]));
@@ -193,16 +196,20 @@
                 this.txt_KeysPressed.Text = this.Str_KeyStrokes;
                 return;
             }
-            Label_021B:
+            Label_Test:
             this.txt_KeysPressed.Text = this.Str_KeyStrokes;
             this.txt_KeysPressed.Text.Substring(0, 1);
         }
 
         private void Within_Timer_Tick(object sender, EventArgs e)
         {
-            this.Within_Timer.Enabled = false;
-            this.Bool_First_Visit = true;
-            this.txt_Word.Text = this.txt_Word.Text.Remove(this.txt_Word.Text.Length - 1);
+            try
+            {
+                this.Within_Timer.Enabled = false;
+                this.Bool_First_Visit = true;
+                this.txt_Word.Text = this.txt_Word.Text.Remove(this.txt_Word.Text.Length - 1);
+            }
+            catch { }
             if (Convert.ToString(this.Lst_Global_Listbox.Items[this.Int_My_List_Index]) == "~")
             {
                 this.txt_Word.AppendText(",");
@@ -219,12 +226,6 @@
                 this.Bool_IsButtonPresssed[i] = false;
             }
 
-        }
-
-        private void btn_Enter_Click(object sender, EventArgs e)
-        {
-            this.Boolean_Requires_Saving = true;
-            this.txt_Writing_Pad.AppendText(Environment.NewLine);
         }
 
         private void btn_2_Click(object sender, EventArgs e)
@@ -298,69 +299,16 @@
             Within_Timer.Interval = intIntervalRequired;
             for (int intWhichButton = 0; intWhichButton <= 18; intWhichButton++)
                 boolsButtonPressed[intWhichButton] = false;
-            loadDictionary();
+            
             
         }
-        private void loadDictionary()
+
+        private void btn_Enter_Click(object sender, EventArgs e)
         {
-            switch (this.txt_KeysPressed.Text[0])
-            {
-                case '*':
-                    this.AddToList(this.listBox_Dictionary_Key_Quote);
-                    return;
-
-                case '+':
-                case ',':
-                case '-':
-                case '.':
-                case '/':
-                case '0':
-                    break;
-
-                case '1':
-                    this.AddToList(this.listBox_Dictionary_Key_1);
-                    return;
-
-                case '2':
-                    this.AddToList(this.listBox_Dictionary_Key_2);
-                    return;
-
-                case '3':
-                    this.AddToList(this.listBox_Dictionary_Key_3);
-                    return;
-
-                case '4':
-                    this.AddToList(this.listBox_Dictionary_Key_4);
-                    return;
-
-                case '5':
-                    this.AddToList(this.listBox_Dictionary_Key_5);
-                    return;
-
-                case '6':
-                    this.AddToList(this.listBox_Dictionary_Key_6);
-                    return;
-
-                case '7':
-                    this.AddToList(this.listBox_Dictionary_Key_7);
-                    return;
-
-                case '8':
-                    this.AddToList(this.listBox_Dictionary_Key_8);
-                    return;
-
-                case '9':
-                    this.AddToList(this.listBox_Dictionary_Key_9);
-                    return;
-
-                case '#':
-                    this.AddToList(this.listBox_Dictionary_Key_Hash);
-                    break;
-
-                default:
-                    return;
-            }
+            this.Boolean_Requires_Saving = true;
+            this.txt_Writing_Pad.AppendText(Environment.NewLine);
         }
+
 
     }
 }
