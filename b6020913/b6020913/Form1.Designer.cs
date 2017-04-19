@@ -148,6 +148,7 @@
             this.strip_Exit.Name = "strip_Exit";
             this.strip_Exit.Size = new System.Drawing.Size(152, 22);
             this.strip_Exit.Text = "Exit";
+            this.strip_Exit.Click += new System.EventHandler(this.strip_Exit_Click);
             // 
             // strip_Configure
             // 

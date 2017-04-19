@@ -379,6 +379,11 @@
             }
             catch { }
         }
+
+        private void strip_Exit_Click(object sender, EventArgs e)
+        {
+            base.Close();
+        }
     }
 }
 
