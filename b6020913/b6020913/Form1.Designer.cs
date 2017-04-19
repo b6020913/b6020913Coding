@@ -85,8 +85,8 @@
             this.listBox_Dictionary_Key_8 = new System.Windows.Forms.ListBox();
             this.listBox_Dictionary_Key_7 = new System.Windows.Forms.ListBox();
             this.Within_Timer = new System.Windows.Forms.Timer(this.components);
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.saveFile = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.SaveFile = new System.Windows.Forms.SaveFileDialog();
             this.strip.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -118,31 +118,35 @@
             // strip_New
             // 
             this.strip_New.Name = "strip_New";
-            this.strip_New.Size = new System.Drawing.Size(114, 22);
+            this.strip_New.Size = new System.Drawing.Size(152, 22);
             this.strip_New.Text = "New";
+            this.strip_New.Click += new System.EventHandler(this.strip_New_Click);
             // 
             // strip_Open
             // 
             this.strip_Open.Name = "strip_Open";
-            this.strip_Open.Size = new System.Drawing.Size(114, 22);
+            this.strip_Open.Size = new System.Drawing.Size(152, 22);
             this.strip_Open.Text = "Open";
+            this.strip_Open.Click += new System.EventHandler(this.strip_Open_Click);
             // 
             // strip_Save
             // 
             this.strip_Save.Name = "strip_Save";
-            this.strip_Save.Size = new System.Drawing.Size(114, 22);
+            this.strip_Save.Size = new System.Drawing.Size(152, 22);
             this.strip_Save.Text = "Save";
+            this.strip_Save.Click += new System.EventHandler(this.strip_Save_Click);
             // 
             // strip_SaveAs
             // 
             this.strip_SaveAs.Name = "strip_SaveAs";
-            this.strip_SaveAs.Size = new System.Drawing.Size(114, 22);
+            this.strip_SaveAs.Size = new System.Drawing.Size(152, 22);
             this.strip_SaveAs.Text = "Save As";
+            this.strip_SaveAs.Click += new System.EventHandler(this.strip_SaveAs_Click);
             // 
             // strip_Exit
             // 
             this.strip_Exit.Name = "strip_Exit";
-            this.strip_Exit.Size = new System.Drawing.Size(114, 22);
+            this.strip_Exit.Size = new System.Drawing.Size(152, 22);
             this.strip_Exit.Text = "Exit";
             // 
             // strip_Configure
@@ -711,9 +715,9 @@
             // 
             this.Within_Timer.Tick += new System.EventHandler(this.Within_Timer_Tick);
             // 
-            // openFileDialog1
+            // openFileDialog
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog.FileName = "openFileDialog";
             // 
             // Frm_Main
             // 
@@ -821,8 +825,8 @@
         private System.Windows.Forms.ListBox listBox_Dictionary_Key_8;
         private System.Windows.Forms.ListBox listBox_Dictionary_Key_7;
         private System.Windows.Forms.Timer Within_Timer;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.SaveFileDialog saveFile;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.SaveFileDialog SaveFile;
     }
 }
 

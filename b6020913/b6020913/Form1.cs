@@ -17,7 +17,7 @@
         string Str_KeyStrokes;
         bool Bool_First_Visit = true;
         bool[] Bool_IsButtonPresssed = new bool[0x13];
-        bool Boolean_Requires_Saving;
+        bool Boolean_Requires_Saving = false;
         int Int_NumberOfCharacters;
         int Int_My_List_Index;
         ListBox Lst_Global_Listbox = new ListBox();
@@ -26,6 +26,7 @@
         bool[] boolsButtonPressed = new bool[19];
         int intPredictedIndex;
         int intNumberOfCharacters;
+        string Str_Present_File_Path_Name = "";
         public Frm_Main()
         {
             InitializeComponent();
@@ -100,9 +101,13 @@
             {
                 if (this.txt_Word.Text.Length > 0)
                 {
-                    this.txt_Word.Text = this.txt_Word.Text.Remove(this.txt_Word.Text.Length - 1);
-                    this.Str_KeyStrokes = this.Str_KeyStrokes.Remove(this.Str_KeyStrokes.Length - 1);
-                    this.txt_KeysPressed.Text = this.Str_KeyStrokes;
+                    try
+                    {
+                        this.txt_Word.Text = this.txt_Word.Text.Remove(this.txt_Word.Text.Length - 1);
+                        this.Str_KeyStrokes = this.Str_KeyStrokes.Remove(this.Str_KeyStrokes.Length - 1);
+                        this.txt_KeysPressed.Text = this.Str_KeyStrokes;
+                    }
+                    catch { }
                 }
             
 
@@ -309,7 +314,69 @@
             this.txt_Writing_Pad.AppendText(Environment.NewLine);
         }
 
+        private void strip_New_Click(object sender, EventArgs e)
+        {
+            if (this.Boolean_Requires_Saving == true);
+            {
+            }
+            this.txt_Writing_Pad.Clear();
+        }
 
+        private void strip_Save_Click(object sender, EventArgs e)
+        {
+                if (this.txt_Writing_Pad.Text != "")
+                {
+                    if (this.Str_Present_File_Path_Name == "")
+                    {
+                        this.strip_SaveAs_Click(sender, e);
+                    }
+                    else
+                    {
+                        StreamWriter writer = File.CreateText(this.Str_Present_File_Path_Name);
+                        if (writer != null)
+                        {
+                            writer.Write(this.txt_Writing_Pad.Text);
+                            writer.Close();
+                            this.Boolean_Requires_Saving = false;
+                        }
+                    }
+                }
+        }
+
+        private void strip_SaveAs_Click(object sender, EventArgs e)
+        {
+            if (this.txt_Writing_Pad.Text != "")
+            {
+                this.SaveFile.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                this.SaveFile.FilterIndex = 2;
+                this.SaveFile.RestoreDirectory = true;
+                if (this.SaveFile.ShowDialog() == DialogResult.OK)
+                {
+                    this.Str_Present_File_Path_Name = this.SaveFile.FileName;
+                    StreamWriter writer = File.CreateText(this.Str_Present_File_Path_Name);
+                    if (writer == null)
+                    {
+                        writer.Write(this.txt_Writing_Pad.Text);
+                        writer.Close();
+                        this.Boolean_Requires_Saving = false;
+                    }
+                }
+            }
+        }
+
+        private void strip_Open_Click(object sender, EventArgs e)
+        {
+            if (this.Boolean_Requires_Saving)
+            {
+                this.strip_Save_Click(sender, e);
+            }
+            this.openFileDialog.ShowDialog();
+            this.Str_Present_File_Path_Name = this.openFileDialog.FileName;
+            if (this.Str_Present_File_Path_Name != "")
+            {
+                txt_Writing_Pad.Text = File.ReadAllText(openFileDialog.FileName);
+            }
+        }
     }
 }
 
