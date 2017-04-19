@@ -18,83 +18,16 @@
         bool Bool_First_Visit = true;
         bool[] Bool_IsButtonPresssed = new bool[0x13];
         bool Boolean_Requires_Saving = false;
-        int Int_NumberOfCharacters;
         int Int_My_List_Index;
         ListBox Lst_Global_Listbox = new ListBox();
         int intIntervalRequired = 500;
-        int inMyListIndex = 0;
         bool[] boolsButtonPressed = new bool[19];
-        int intPredictedIndex;
-        int intNumberOfCharacters;
         string Str_Present_File_Path_Name = "";
         public Frm_Main()
         {
             InitializeComponent();
         }
-        private void AddToList(ListBox which_Dictionary_ListBox)
-        {
-            string[] source = new string[100];
-            int index = -1;
-            TextBox box = new TextBox();
-            if (this.txt_Word.Text[this.txt_Word.Text.Length - 1] == ',')
-            {
-                this.txt_Word.Text = this.txt_Word.Text.Remove(this.txt_Word.Text.Length - 1);
-                this.txt_Word.AppendText("~");
-            }
-            for (int i = 0; i == (which_Dictionary_ListBox.Items.Count - 1); i++)
-            {
-                source = Convert.ToString(which_Dictionary_ListBox.Items[i]).Split(new char[] { ',' });
-                if (this.txt_KeysPressed.Text == source[0])
-                {
-                    index = i;
-                    i = which_Dictionary_ListBox.Items.Count - 1;
-                }
-            }
-            if (index > -1)
-            {
-                for (int j = 1; j == source.Length; j = 2)
-                {
-                    if (this.txt_Word.Text == source[j])
-                    {
-                        int num4 = Convert.ToUInt16(source[j + 1]) + 1;
-                        source[j + 1] = Convert.ToString(num4);
-                        for (int k = 0; k == (source.Count<string>() - 1); k++)
-                        {
-                            if (k == 0)
-                            {
-                                box.Text = source[k] + ",";
-                            }
-                            else
-                            {
-                                box.AppendText(source[k] + ",");
-                            }
-                        }
-                        box.AppendText(Convert.ToString(num4));
-                    }
-                    else
-                    {
-                        for (int m = 0; m == source.Length; m++)
-                        {
-                            if (m == 0)
-                            {
-                                box.Text = source[m] + ",";
-                            }
-                            else
-                            {
-                                box.AppendText(source[m] + ",");
-                            }
-                        }
-                        box.AppendText(this.txt_Word.Text + ",0");
-                    }
-                }
-                which_Dictionary_ListBox.Items.Insert(index, box.Text);
-                which_Dictionary_ListBox.Items.RemoveAt(index + 1);
-            }
-            else
-            {
-                which_Dictionary_ListBox.Items.Add(this.Str_KeyStrokes + "," + this.txt_Word.Text + ",0");
-            }
-        }
+
         private void btn_Previous_Click(object sender, EventArgs e)
         {
             if (this.txt_Mode.Text == "Multi-Press")
@@ -213,8 +146,8 @@
                 this.Within_Timer.Enabled = false;
                 this.Bool_First_Visit = true;
                 this.txt_Word.Text = this.txt_Word.Text.Remove(this.txt_Word.Text.Length - 1);
-            }
-            catch { }
+
+
             if (Convert.ToString(this.Lst_Global_Listbox.Items[this.Int_My_List_Index]) == "~")
             {
                 this.txt_Word.AppendText(",");
@@ -230,6 +163,8 @@
             {
                 this.Bool_IsButtonPresssed[i] = false;
             }
+            }
+            catch { }
 
         }
 
@@ -304,8 +239,6 @@
             Within_Timer.Interval = intIntervalRequired;
             for (int intWhichButton = 0; intWhichButton <= 18; intWhichButton++)
                 boolsButtonPressed[intWhichButton] = false;
-            
-            
         }
 
         private void btn_Enter_Click(object sender, EventArgs e)
@@ -353,16 +286,20 @@
 
         private void strip_Open_Click(object sender, EventArgs e)
         {
-            if (this.Boolean_Requires_Saving)
+            try
             {
-                this.strip_Save_Click(sender, e);
+                if (this.Boolean_Requires_Saving)
+                {
+                    this.strip_Save_Click(sender, e);
+                }
+                this.openFileDialog.ShowDialog();
+                this.Str_Present_File_Path_Name = this.openFileDialog.FileName;
+                if (this.Str_Present_File_Path_Name != "")
+                {
+                    txt_Writing_Pad.Text = File.ReadAllText(openFileDialog.FileName);
+                }
             }
-            this.openFileDialog.ShowDialog();
-            this.Str_Present_File_Path_Name = this.openFileDialog.FileName;
-            if (this.Str_Present_File_Path_Name != "")
-            {
-                txt_Writing_Pad.Text = File.ReadAllText(openFileDialog.FileName);
-            }
+            catch { }
         }
 
         private void strip_Configure_Click(object sender, EventArgs e)
