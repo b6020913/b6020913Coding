@@ -179,6 +179,7 @@
             // 
             this.txt_Mode.Location = new System.Drawing.Point(235, 8);
             this.txt_Mode.Name = "txt_Mode";
+            this.txt_Mode.ReadOnly = true;
             this.txt_Mode.Size = new System.Drawing.Size(84, 20);
             this.txt_Mode.TabIndex = 1;
             this.txt_Mode.Text = "Multi-Press";
@@ -756,6 +757,7 @@
             this.MainMenuStrip = this.strip;
             this.MaximizeBox = false;
             this.Name = "Frm_Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mini Keyboard";
             this.Load += new System.EventHandler(this.Frm_Main_Load);
             this.strip.ResumeLayout(false);

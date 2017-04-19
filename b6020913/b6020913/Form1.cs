@@ -318,29 +318,23 @@
         {
             if (this.Boolean_Requires_Saving == true);
             {
+                this.strip_Save_Click(sender, e);
             }
             this.txt_Writing_Pad.Clear();
         }
 
         private void strip_Save_Click(object sender, EventArgs e)
         {
-                if (this.txt_Writing_Pad.Text != "")
+            if (this.txt_Writing_Pad.Text != "")
+            {
+                this.SaveFile.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                this.SaveFile.FilterIndex = 2;
+
+                if (SaveFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    if (this.Str_Present_File_Path_Name == "")
-                    {
-                        this.strip_SaveAs_Click(sender, e);
-                    }
-                    else
-                    {
-                        StreamWriter writer = File.CreateText(this.Str_Present_File_Path_Name);
-                        if (writer != null)
-                        {
-                            writer.Write(this.txt_Writing_Pad.Text);
-                            writer.Close();
-                            this.Boolean_Requires_Saving = false;
-                        }
-                    }
+                    File.WriteAllText(SaveFile.FileName, txt_Writing_Pad.Text);
                 }
+            }
         }
 
         private void strip_SaveAs_Click(object sender, EventArgs e)
@@ -349,17 +343,10 @@
             {
                 this.SaveFile.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
                 this.SaveFile.FilterIndex = 2;
-                this.SaveFile.RestoreDirectory = true;
-                if (this.SaveFile.ShowDialog() == DialogResult.OK)
+
+                if (SaveFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    this.Str_Present_File_Path_Name = this.SaveFile.FileName;
-                    StreamWriter writer = File.CreateText(this.Str_Present_File_Path_Name);
-                    if (writer == null)
-                    {
-                        writer.Write(this.txt_Writing_Pad.Text);
-                        writer.Close();
-                        this.Boolean_Requires_Saving = false;
-                    }
+                    File.WriteAllText(SaveFile.FileName, txt_Writing_Pad.Text);
                 }
             }
         }
