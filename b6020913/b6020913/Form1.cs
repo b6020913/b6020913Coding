@@ -282,16 +282,18 @@
                     File.WriteAllText(SaveFile.FileName, txt_Writing_Pad.Text);
                 }
             }
+            Boolean_Requires_Saving = false;
         }
 
         private void strip_Open_Click(object sender, EventArgs e)
         {
             try
             {
-                if (this.Boolean_Requires_Saving)
+                if (Boolean_Requires_Saving == true);
                 {
                     this.strip_Save_Click(sender, e);
                 }
+                Boolean_Requires_Saving = false;
                 this.openFileDialog.ShowDialog();
                 this.Str_Present_File_Path_Name = this.openFileDialog.FileName;
                 if (this.Str_Present_File_Path_Name != "")
