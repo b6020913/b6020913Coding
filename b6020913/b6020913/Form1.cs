@@ -20,7 +20,7 @@
         bool Boolean_Requires_Saving = false;
         int Int_My_List_Index;
         ListBox Lst_Global_Listbox = new ListBox();
-        int intIntervalRequired = 500;
+        int Int_Interval_Required = 500;
         bool[] boolsButtonPressed = new bool[19];
         string Str_Present_File_Path_Name = "";
         public Frm_Main()
@@ -64,14 +64,14 @@
                 }
             }
 
-        private bool Was_A_Different_Button_Pressed(int Button_Pressed)
+        private bool Different_Button_Pressed(int Button_Pressed)
         {
             return (!this.Bool_First_Visit && !this.Bool_IsButtonPresssed[Button_Pressed]);
         }
 
-        private void React_To_Which_Button(object sender, EventArgs e, Button which_button, ListBox which_listBox, ListBox which_Dictionary, int which_Button_Number)
+        private void Which_Button(object sender, EventArgs e, Button which_button, ListBox which_listBox, ListBox which_Dictionary, int which_Button_Number)
         {
-            if (this.Was_A_Different_Button_Pressed(which_button.TabIndex))
+            if (this.Different_Button_Pressed(which_button.TabIndex))
             {
                 this.Within_Timer_Tick(sender, e);
             }
@@ -170,56 +170,56 @@
 
         private void btn_2_Click(object sender, EventArgs e)
         {
-            this.React_To_Which_Button(sender, e, this.btn_2, this.listBox_2, this.listBox_Dictionary_Key_2, 2);
+            this.Which_Button(sender, e, this.btn_2, this.listBox_2, this.listBox_Dictionary_Key_2, 2);
         }
 
         private void btn_1_Click(object sender, EventArgs e)
         {
-            this.React_To_Which_Button(sender, e, this.btn_1, this.listBox_1, this.listBox_Dictionary_Key_1, 1);
+            this.Which_Button(sender, e, this.btn_1, this.listBox_1, this.listBox_Dictionary_Key_1, 1);
         }
         private void btn_3_Click(object sender, EventArgs e)
         {
-            this.React_To_Which_Button(sender, e, this.btn_3, this.listBox_3, this.listBox_Dictionary_Key_3, 3);
+            this.Which_Button(sender, e, this.btn_3, this.listBox_3, this.listBox_Dictionary_Key_3, 3);
         }
 
         private void btn_4_Click(object sender, EventArgs e)
         {
-            this.React_To_Which_Button(sender, e, this.btn_4, this.listBox_4, this.listBox_Dictionary_Key_4, 4);
+            this.Which_Button(sender, e, this.btn_4, this.listBox_4, this.listBox_Dictionary_Key_4, 4);
         }
 
         private void btn_5_Click(object sender, EventArgs e)
         {
-            this.React_To_Which_Button(sender, e, this.btn_5, this.listBox_5, this.listBox_Dictionary_Key_5, 5);
+            this.Which_Button(sender, e, this.btn_5, this.listBox_5, this.listBox_Dictionary_Key_5, 5);
         }
 
         private void btn_6_Click(object sender, EventArgs e)
         {
-            this.React_To_Which_Button(sender, e, this.btn_6, this.listBox_6, this.listBox_Dictionary_Key_6, 6);
+            this.Which_Button(sender, e, this.btn_6, this.listBox_6, this.listBox_Dictionary_Key_6, 6);
         }
 
         private void btn_7_Click(object sender, EventArgs e)
         {
-            this.React_To_Which_Button(sender, e, this.btn_7, this.listBox_7, this.listBox_Dictionary_Key_7, 7);
+            this.Which_Button(sender, e, this.btn_7, this.listBox_7, this.listBox_Dictionary_Key_7, 7);
         }
 
         private void btn_8_Click(object sender, EventArgs e)
         {
-            this.React_To_Which_Button(sender, e, this.btn_8, this.listBox_8, this.listBox_Dictionary_Key_8, 8);
+            this.Which_Button(sender, e, this.btn_8, this.listBox_8, this.listBox_Dictionary_Key_8, 8);
         }
 
         private void btn_9_Click(object sender, EventArgs e)
         {
-            this.React_To_Which_Button(sender, e, this.btn_9, this.listBox_9, this.listBox_Dictionary_Key_9, 9);
+            this.Which_Button(sender, e, this.btn_9, this.listBox_9, this.listBox_Dictionary_Key_9, 9);
         }
 
         private void btn_Hashtag_Click(object sender, EventArgs e)
         {
-            this.React_To_Which_Button(sender, e, this.btn_Hashtag, this.listBox_Hashtag, this.listBox_Dictionary_Key_Hash, 11);
+            this.Which_Button(sender, e, this.btn_Hashtag, this.listBox_Hashtag, this.listBox_Dictionary_Key_Hash, 11);
         }
 
         private void btn_Punctuation_Click(object sender, EventArgs e)
         {
-            this.React_To_Which_Button(sender, e, this.btn_Punctuation, this.listBox_Punctuation, this.listBox_Dictionary_Key_Quote, 10);
+            this.Which_Button(sender, e, this.btn_Punctuation, this.listBox_Punctuation, this.listBox_Dictionary_Key_Quote, 10);
         }
 
         private void btn_Mode_Click(object sender, EventArgs e)
@@ -236,7 +236,7 @@
 
         private void Frm_Main_Load(object sender, EventArgs e)
         {
-            Within_Timer.Interval = intIntervalRequired;
+            Within_Timer.Interval = Int_Interval_Required;
             for (int intWhichButton = 0; intWhichButton <= 18; intWhichButton++)
                 boolsButtonPressed[intWhichButton] = false;
         }
@@ -308,13 +308,13 @@
         {
             try
             {
-                int delay = Convert.ToInt16(My_Dialogs.InputBox("Enter a delay value you require, 1000 is equal to 1 second meaning 5000 is 5 seconds. The current delay value is " + this.intIntervalRequired + "."));
+                int delay = Convert.ToInt16(My_Dialogs.InputBox("Enter a delay value you require, 1000 is equal to 1 second meaning 5000 is 5 seconds. The current delay value is " + this.Int_Interval_Required + "."));
             if (delay < 500)
             {
                 delay = 500;
             }
             this.Within_Timer.Interval = delay;
-            this.intIntervalRequired = delay;
+            this.Int_Interval_Required = delay;
             }
             catch { }
         }
