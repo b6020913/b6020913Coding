@@ -238,39 +238,39 @@
         {
             Within_Timer.Interval = Int_Interval_Required; //Sets Within_Timer.Interval as Int_Interval_Required
             for (int intWhichButton = 0; intWhichButton <= 18; intWhichButton++)
-                boolsButtonPressed[intWhichButton] = false;
+                boolsButtonPressed[intWhichButton] = false; // boolsButtonPressed is set to false
         }
 
-        private void btn_Enter_Click(object sender, EventArgs e)
+        private void btn_Enter_Click(object sender, EventArgs e) // If button Enter is clicked then;
         {
             this.Boolean_Requires_Saving = true;
             this.txt_Writing_Pad.AppendText(Environment.NewLine);
         }
 
-        private void strip_New_Click(object sender, EventArgs e)
+        private void strip_New_Click(object sender, EventArgs e) // If the menu strip New is clicked then;
         {
-            if (this.Boolean_Requires_Saving == true);
+            if (this.Boolean_Requires_Saving == true); // If Boolean_Requires_Saving is true;
             {
-                this.strip_Save_Click(sender, e);
+                this.strip_Save_Click(sender, e); // Goes to the strip_Save_CLick method
             }
-            this.txt_Writing_Pad.Clear();
+            this.txt_Writing_Pad.Clear(); // Clears the writing pad
         }
 
-        private void strip_Save_Click(object sender, EventArgs e)
+        private void strip_Save_Click(object sender, EventArgs e) // If the menu strip Save is clicked then;
         {
             if (this.txt_Writing_Pad.Text != "")
             {
-                this.SaveFile.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-                this.SaveFile.FilterIndex = 2;
+                this.SaveFile.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"; // Filter for the file type
+                this.SaveFile.FilterIndex = 2; // Sets the filter index as 2
 
-                if (SaveFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                if (SaveFile.ShowDialog() == System.Windows.Forms.DialogResult.OK) // If the Save dialog goes OK then;
                 {
-                    File.WriteAllText(SaveFile.FileName, txt_Writing_Pad.Text);
+                    File.WriteAllText(SaveFile.FileName, txt_Writing_Pad.Text); // Saves the writing pad text to a file
                 }
             }
         }
 
-        private void strip_SaveAs_Click(object sender, EventArgs e)
+        private void strip_SaveAs_Click(object sender, EventArgs e) // If the menu strip Save As is clicked then;
         {
             if (this.txt_Writing_Pad.Text != "")
             {
@@ -285,36 +285,36 @@
             Boolean_Requires_Saving = false;
         }
 
-        private void strip_Open_Click(object sender, EventArgs e)
+        private void strip_Open_Click(object sender, EventArgs e) // If the menu strip Open is clicked then;
         {
             try
             {
-                if (Boolean_Requires_Saving == true);
+                if (Boolean_Requires_Saving == true) ; // If Boolean_Requires_Saving is true then;
                 {
-                    this.strip_Save_Click(sender, e);
+                    this.strip_Save_Click(sender, e); // Goes to the strip_Save_Click method
                 }
                 Boolean_Requires_Saving = false;
-                this.openFileDialog.ShowDialog();
-                this.Str_Present_File_Path_Name = this.openFileDialog.FileName;
+                this.openFileDialog.ShowDialog(); // Initializes the openFileDialog dialog box
+                this.Str_Present_File_Path_Name = this.openFileDialog.FileName; // Assigns Str_Present_File_Path_Name to openFileDialog.FileName
                 if (this.Str_Present_File_Path_Name != "")
                 {
-                    txt_Writing_Pad.Text = File.ReadAllText(openFileDialog.FileName);
+                    txt_Writing_Pad.Text = File.ReadAllText(openFileDialog.FileName); // Reads all the text from the opened file and puts it in the Writing Pad
                 }
             }
             catch { }
         }
 
-        private void strip_Configure_Click(object sender, EventArgs e)
+        private void strip_Configure_Click(object sender, EventArgs e) // If the menu strip Open is clicked then;
         {
             try
             {
-                int delay = Convert.ToInt16(My_Dialogs.InputBox("Enter a delay value you require, 1000 is equal to 1 second meaning 5000 is 5 seconds. The current delay value is " + this.Int_Interval_Required + "."));
-            if (delay < 500)
+                int delay = Convert.ToInt16(My_Dialogs.InputBox("Enter a delay value you require, 1000 is equal to 1 second meaning 5000 is 5 seconds. The current delay value is " + this.Int_Interval_Required + ".")); // Opens the dialog for the delay set
+            if (delay < 500) // If the delay is less than 500
             {
-                delay = 500;
+                delay = 500; //Sets the delay to 500
             }
-            this.Within_Timer.Interval = delay;
-            this.Int_Interval_Required = delay;
+            this.Within_Timer.Interval = delay; // Sets Within_Timer.Interval as delay
+            this.Int_Interval_Required = delay; // Sets Int_Interval_Required as delay
             }
             catch { }
         }
