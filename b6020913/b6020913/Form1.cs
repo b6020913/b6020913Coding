@@ -319,9 +319,9 @@
             catch { }
         }
 
-        private void strip_Exit_Click(object sender, EventArgs e)
+        private void strip_Exit_Click(object sender, EventArgs e) //If the menu strip Exit is clicked then;
         {
-            base.Close();
+            base.Close(); //Closes the form
         }
     }
 }
