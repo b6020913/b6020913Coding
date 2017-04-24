@@ -273,8 +273,8 @@
         {
             if (this.txt_Writing_Pad.Text != "")
             {
-                this.SaveFile.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-                this.SaveFile.FilterIndex = 2;
+                this.SaveFile.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"; // Filter for the file type
+                this.SaveFile.FilterIndex = 2; // Sets the filter index as 2
 
                 if (SaveFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
