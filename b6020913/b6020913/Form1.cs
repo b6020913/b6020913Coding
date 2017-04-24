@@ -276,9 +276,9 @@
                 this.SaveFile.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"; // Filter for the file type
                 this.SaveFile.FilterIndex = 2; // Sets the filter index as 2
 
-                if (SaveFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                if (SaveFile.ShowDialog() == System.Windows.Forms.DialogResult.OK) // If the Save dialog goes OK then;
                 {
-                    File.WriteAllText(SaveFile.FileName, txt_Writing_Pad.Text);
+                    File.WriteAllText(SaveFile.FileName, txt_Writing_Pad.Text); // Saves the writing pad text to a file
                 }
             }
             Boolean_Requires_Saving = false;
