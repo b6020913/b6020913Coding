@@ -9,8 +9,8 @@
     using System.Text;
     using System.Threading.Tasks;
     using System.Windows.Forms;
-    using MyDialogs;
-    using System.IO;
+    using MyDialogs; // This is for the configure box so the delay can be set
+    using System.IO; // Calls the System Input Output functionality
 
     public partial class Frm_Main : Form
     {
@@ -25,48 +25,48 @@
         string Str_Present_File_Path_Name = "";
         public Frm_Main()
         {
-            InitializeComponent();
+            InitializeComponent(); // Initializes the form
         }
 
-        private void btn_Previous_Click(object sender, EventArgs e)
+        private void btn_Previous_Click(object sender, EventArgs e) // If the 'Previous' button is clicked then;
         {
-            if (this.txt_Mode.Text == "Multi-Press")
+            if (this.txt_Mode.Text == "Multi-Press") // If the Mode text says Multi-Press then;
             {
-                if (this.txt_Word.Text.Length > 0)
+                if (this.txt_Word.Text.Length > 0) // If the word length is more than 0 then;
                 {
-                    try
+                    try // Tries this code then passes any errors to the catch
                     {
-                        this.txt_Word.Text = this.txt_Word.Text.Remove(this.txt_Word.Text.Length - 1);
-                        this.Str_KeyStrokes = this.Str_KeyStrokes.Remove(this.Str_KeyStrokes.Length - 1);
-                        this.txt_KeysPressed.Text = this.Str_KeyStrokes;
+                        this.txt_Word.Text = this.txt_Word.Text.Remove(this.txt_Word.Text.Length - 1); // Removes 1 from then length of txt_Word
+                        this.Str_KeyStrokes = this.Str_KeyStrokes.Remove(this.Str_KeyStrokes.Length - 1); // Removes 1 from then length of Str_KeyStrokes
+                        this.txt_KeysPressed.Text = this.Str_KeyStrokes; // Assigns the KeysPressed variable to Str_KeyStrokes
                     }
-                    catch { }
+                    catch { } // Catches any exceptions occurring
                 }
             
 
             }
         }
 
-        private void btn_0_Click(object sender, EventArgs e)
+        private void btn_0_Click(object sender, EventArgs e) // If the '0' button is clicked then;
         {
-            this.Boolean_Requires_Saving = true;
-            if (this.txt_Word.Text.Length > 0)
+            this.Boolean_Requires_Saving = true; // This sets the boolean value of Boolean_Requires_Saving to true
+            if (this.txt_Word.Text.Length > 0) // If the word length is more than 0 then;
             {
                     this.txt_Writing_Pad.AppendText(this.txt_Word.Text + " ");
                     for (int i = 0; i == (this.txt_Word.Text.Length); i++)
                     {
-                        this.txt_Writing_Pad.AppendText(Convert.ToString(this.txt_Word.Text[i]));
+                        this.txt_Writing_Pad.AppendText(Convert.ToString(this.txt_Word.Text[i])); //Converts the input box to a string and assigns it to the txt_Writing_Pad
                     }
                     
-                    this.txt_Word.Clear();
-                    this.Str_KeyStrokes = "";
-                    this.txt_KeysPressed.Text = this.Str_KeyStrokes;
+                    this.txt_Word.Clear(); // Clears the txt_Word input box
+                    this.Str_KeyStrokes = ""; // Sets the Str_KeyStrokes varaible as nothing
+                    this.txt_KeysPressed.Text = this.Str_KeyStrokes; // Assigns the KeysPressed variable to Str_KeyStrokes
                 }
             }
 
-        private bool Different_Button_Pressed(int Button_Pressed)
+        private bool Different_Button_Pressed(int Button_Pressed) // Checks to see if another button is pressed
         {
-            return (!this.Bool_First_Visit && !this.Bool_IsButtonPresssed[Button_Pressed]);
+            return (!this.Bool_First_Visit && !this.Bool_IsButtonPresssed[Button_Pressed]); // Returns if the Bool_First_Visit and Bool_IsButtonPressed both equat to true
         }
 
         private void Which_Button(object sender, EventArgs e, Button which_button, ListBox which_listBox, ListBox which_Dictionary, int which_Button_Number)
