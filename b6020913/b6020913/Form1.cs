@@ -14,7 +14,7 @@
 
     public partial class Frm_Main : Form
     {
-        string Str_KeyStrokes;
+        string Str_KeyStrokes; // Calling variables
         bool Bool_First_Visit = true;
         bool[] Bool_IsButtonPressed = new bool[0x13];
         bool Boolean_Requires_Saving = false;
