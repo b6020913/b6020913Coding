@@ -118,35 +118,35 @@
             // strip_New
             // 
             this.strip_New.Name = "strip_New";
-            this.strip_New.Size = new System.Drawing.Size(152, 22);
+            this.strip_New.Size = new System.Drawing.Size(114, 22);
             this.strip_New.Text = "New";
             this.strip_New.Click += new System.EventHandler(this.strip_New_Click);
             // 
             // strip_Open
             // 
             this.strip_Open.Name = "strip_Open";
-            this.strip_Open.Size = new System.Drawing.Size(152, 22);
+            this.strip_Open.Size = new System.Drawing.Size(114, 22);
             this.strip_Open.Text = "Open";
             this.strip_Open.Click += new System.EventHandler(this.strip_Open_Click);
             // 
             // strip_Save
             // 
             this.strip_Save.Name = "strip_Save";
-            this.strip_Save.Size = new System.Drawing.Size(152, 22);
+            this.strip_Save.Size = new System.Drawing.Size(114, 22);
             this.strip_Save.Text = "Save";
             this.strip_Save.Click += new System.EventHandler(this.strip_Save_Click);
             // 
             // strip_SaveAs
             // 
             this.strip_SaveAs.Name = "strip_SaveAs";
-            this.strip_SaveAs.Size = new System.Drawing.Size(152, 22);
+            this.strip_SaveAs.Size = new System.Drawing.Size(114, 22);
             this.strip_SaveAs.Text = "Save As";
             this.strip_SaveAs.Click += new System.EventHandler(this.strip_SaveAs_Click);
             // 
             // strip_Exit
             // 
             this.strip_Exit.Name = "strip_Exit";
-            this.strip_Exit.Size = new System.Drawing.Size(152, 22);
+            this.strip_Exit.Size = new System.Drawing.Size(114, 22);
             this.strip_Exit.Text = "Exit";
             this.strip_Exit.Click += new System.EventHandler(this.strip_Exit_Click);
             // 
@@ -759,7 +759,7 @@
             this.MaximizeBox = false;
             this.Name = "Frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mini Keyboard";
+            this.Text = "Mini Keyboard by Alexander Noble v.1";
             this.Load += new System.EventHandler(this.Frm_Main_Load);
             this.strip.ResumeLayout(false);
             this.strip.PerformLayout();

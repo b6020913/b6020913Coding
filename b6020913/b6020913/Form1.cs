@@ -165,7 +165,6 @@
             }
             }
             catch { }
-
         }
 
         private void btn_2_Click(object sender, EventArgs e) // If button 2 is clicked then;
